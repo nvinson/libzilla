@@ -86,5 +86,6 @@ Options:
         StableCommand(docopt(StableCommand.__doc__))
 
     def run_shell_command(self):
-        from libzilla.cli.shell import ShellCommand
-        ShellCommand(docopt(ShellCommand.__doc__)).cmdloop()
+        from libzilla.tui.shell import ShellCommand
+        with ShellCommand("libzilla") as s:
+            s.run()
